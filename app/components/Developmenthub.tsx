@@ -11,7 +11,7 @@ export default function Developmenthub() {
              <span className="text-orange-500">Development Hub</span>
           </h2>
           <p className="mt-3 text-lg text-gray-600">
-            Our offshore development hub in Pakistan enables us to deliver world-class software solutions efficiently and cost-effectively.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis inventore, quae molestiae modi nisi recusandae nulla laboriosam ratione alias distinctio impedit enim sapiente, quas, omnis velit! Dolor minus amet aliquid?
           </p>
         </div>
 
