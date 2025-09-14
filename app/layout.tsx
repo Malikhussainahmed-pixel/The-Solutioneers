@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body  className={lato.className}
+      <body  className={`${lato.className} px-4`}
       >
         <Navbar />
         {children}
