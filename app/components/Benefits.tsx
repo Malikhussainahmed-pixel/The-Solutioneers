@@ -26,7 +26,7 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="mt-25 relative bg-gradient-to-b from-orange-50 to-white py-16">
+    <section className="mt-25  bg-gradient-to-b from-orange-50 to-white py-16">
       {/* Title + Subtitle */}
       <div className="max-w-4xl mx-auto text-center mb-12 px-4">
         <h2 className="text-3xl sm:text-4xl font-bold">
