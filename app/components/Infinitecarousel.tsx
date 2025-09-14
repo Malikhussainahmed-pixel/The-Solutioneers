@@ -27,18 +27,18 @@ export default function InfiniteCarousel() {
   return (
     <>
     <motion.div
-        className="text-center mb-2 sm:mb-10 mt-54 sm:mt-50"
+        className="text-center mb-2 sm:mb-10 mt-20 sm:mt-50"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="font-black text-6xl sm:text-8xl lg:text-9xl 
+        <h2 className="font-black  text-6xl sm:text-8xl lg:text-9xl 
                bg-gradient-to-r  from-orange-700 via-orange-400 to-orange-200 
                bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(34,211,238,0.9)">Frameworks</h2>
         
       </motion.div>
-    <div className="w-full overflow-hidden bg-transparent py-8">
+    <div className="w-full  overflow-hidden bg-transparent py-8">
       <motion.div
         className="flex w-max"
         animate={{ x: ["0%", "-50%"] }}

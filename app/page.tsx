@@ -2,6 +2,7 @@ import Heroscetion from "./components/Heroscetion";
 
 import Services from "./components/Services";
 import InfiniteCarousel from "./components/Infinitecarousel";
+import Founders from "./components/Founders";
 
 import { Lato } from "next/font/google";
 const lato = Lato({ 
@@ -19,6 +20,7 @@ export default function Home() {
     <Services/>
     <InfiniteCarousel/>
     
+   
     </>
   );
 }
