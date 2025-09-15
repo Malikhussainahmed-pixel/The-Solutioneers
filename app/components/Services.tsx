@@ -57,10 +57,10 @@ export default function ServiceCards() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-8xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
+        <h2 className="text-7xl sm:text-8xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
           Services
         </h2>
-        <p className="mt-2 text-lg text-black max-w-2xl mx-auto">
+        <p className="mt-2 text-md sm:text-lg text-black max-w-2xl mx-auto px-4">
           Explore our range of cutting-edge IT solutions designed to boost your
           business.
         </p>

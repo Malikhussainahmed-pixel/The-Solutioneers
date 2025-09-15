@@ -27,7 +27,7 @@ export default function Herosection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-black text-5xl sm:text-7xl lg:text-8xl text-white"
+          className="font-black text-6xl sm:text-8xl lg:text-8xl text-white"
         >
           The{" "}
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
