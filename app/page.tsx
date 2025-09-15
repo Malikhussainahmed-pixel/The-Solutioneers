@@ -5,6 +5,7 @@ import InfiniteCarousel from "./components/Infinitecarousel";
 import Founders from "./components/Founders";
 import Benefits from "./components/Benefits";
 import Developmenthub from "./components/Developmenthub";
+import Projects from "./components/Projects";
 import { Lato } from "next/font/google";
 const lato = Lato({ 
   subsets: ["latin"],
@@ -19,11 +20,11 @@ export default function Home() {
     
     <Heroscetion/>
     <Services/>
-   
     <InfiniteCarousel/>
      <Benefits/>
      <Developmenthub/>
-    
+    <Projects/>
+    <Founders/>
    
     </>
   );
