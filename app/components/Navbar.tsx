@@ -1,23 +1,67 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const navItems = ["Services", "Projects", "Clients", "About Us", "Contact Us"];
 
+  // Scroll listener
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // hide when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+
+      // change background on scroll
+      setIsScrolled(currentScrollY > 50);
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent py-6 px-6">
+    <motion.nav
+      initial={{ y: 0 }}
+      animate={{ y: showNavbar ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+      className={`fixed top-0 left-0 w-full z-50 px-6 py-4 transition-colors duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+    >
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="font-black text-2xl text-white cursor-pointer hover:scale-110 transition-transform duration-300">
+        <div
+          className={`font-black text-2xl cursor-pointer hover:scale-110 transition-transform duration-300 ${
+            isScrolled
+              ? "bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-700 bg-clip-text text-transparent"
+              : "text-white"
+          }`}
+        >
           The Solutioneers
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 text-white font-semibold">
+        <div
+          className={`hidden md:flex gap-8 font-semibold ${
+            isScrolled
+              ? "text-purple-900"
+              : "text-white"
+          }`}
+        >
           {navItems.map((item, i) => (
             <div
               key={i}
@@ -30,7 +74,11 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className={`md:hidden ${
+            isScrolled
+              ? "bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-700 bg-clip-text text-transparent"
+              : "text-white"
+          }`}
           onClick={() => setIsOpen(true)}
         >
           <Menu size={28} />
@@ -49,7 +97,7 @@ export default function Navbar() {
           >
             {/* Drawer Header */}
             <div className="flex justify-between items-center">
-              <div className="font-black  text-2xl bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 text-transparent bg-clip-text">
+              <div className="font-black text-2xl bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-700 text-transparent bg-clip-text">
                 The Solutioneers
               </div>
               <button
@@ -79,6 +127,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }
