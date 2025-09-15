@@ -6,6 +6,8 @@ import Founders from "./components/Founders";
 import Benefits from "./components/Benefits";
 import Developmenthub from "./components/Developmenthub";
 import Projects from "./components/Projects";
+import Bookmeeting from "./components/Bookmeeting";
+import Footer from "./components/Footer";
 import { Lato } from "next/font/google";
 const lato = Lato({ 
   subsets: ["latin"],
@@ -25,7 +27,8 @@ export default function Home() {
      <Developmenthub/>
     <Projects/>
     <Founders/>
-   
+   <Bookmeeting/>
+   <Footer/>
     </>
   );
 }

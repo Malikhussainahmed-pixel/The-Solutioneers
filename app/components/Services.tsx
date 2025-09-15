@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 export default function ServiceCards() {
   return (
     <>
+    <section id="services">
     <motion.div
         className="text-center mb-2 sm:mb-20 mt-54 sm:mt-90"
         initial={{ opacity: 0, y: 20 }}
@@ -151,6 +152,7 @@ export default function ServiceCards() {
 
       </div>
     </div>
+    </section>
     </>
   );
 }
