@@ -67,7 +67,7 @@ export default function ServiceCards() {
       </motion.div>
 
       {/* Cards */}
-      <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto p-12 md:p-10 lg:p-8 mt-0 sm:mt-10 sm:mb-20">
+      <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto p-8 md:p-10 lg:p-8 mt-0 sm:mt-10 sm:mb-20">
         {services.map((service, i) => (
           <motion.div
             key={i}
