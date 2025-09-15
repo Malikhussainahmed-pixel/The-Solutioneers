@@ -48,7 +48,7 @@ export default function Projects() {
 
   return (
     <section>
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl ">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             <span className="text-orange-500">Projects</span>
@@ -59,7 +59,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="projects mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:p-0 px-10">
+        <div className="projects mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6  p-16">
           {projects.map((project, idx) => (
             <div
               key={idx}
