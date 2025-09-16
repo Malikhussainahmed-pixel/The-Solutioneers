@@ -6,22 +6,22 @@ import { Users, Layers, MessageSquare, Clock } from "lucide-react";
 export default function Benefits() {
   const items = [
     {
-      icon: <Users className="w-8 h-8 " />,
+      icon: <Users className="w-8 h-8" />,
       title: "Startups & Entrepreneurs",
       desc: "Bring your business idea to life with skilled developers and AI engineers.",
     },
     {
-      icon: <Layers className="w-8 h-8 " />,
+      icon: <Layers className="w-8 h-8" />,
       title: "Established Businesses",
       desc: "Scale your team efficiently without the overhead of permanent hiring.",
     },
     {
-      icon: <MessageSquare className="w-8 h-8 " />,
+      icon: <MessageSquare className="w-8 h-8" />,
       title: "Tech Companies",
       desc: "Expedite project timelines by integrating top-tier talent into your workforce.",
     },
     {
-      icon: <Clock className="w-8 h-8 " />,
+      icon: <Clock className="w-8 h-8" />,
       title: "Agencies & Enterprises",
       desc: "Augment your existing team with specialized skills and expertise.",
     },
@@ -35,13 +35,13 @@ export default function Benefits() {
       {/* Title + Subtitle */}
       <div className="max-w-4xl mx-auto text-center mb-12 px-4">
         <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-3xl sm:text-4xl font-bold"
         >
-          Benefit's from Using{" "}
+          Benefit’s from Using{" "}
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
             Our Services?
           </span>
@@ -65,13 +65,17 @@ export default function Benefits() {
         {items.map((item, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: i < 2 ? -120 : 120 }} // first 2 left, last 2 right
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{
+              opacity: 0,
+              scale: 0.9, // starts smaller
+              y: 40, // slides up a bit
+            }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{
               duration: 0.6,
               delay: i * 0.15,
-              ease: [0.42, 0, 0.58, 1], // smooth cubic bezier
+              ease: "easeOut",
             }}
             className="flex gap-4 items-start"
           >

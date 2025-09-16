@@ -30,10 +30,10 @@ export default function BookMeeting() {
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: -40 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-4xl sm:text-5xl font-extrabold text-gray-900"
         >
           Book a{" "}
@@ -44,10 +44,10 @@ export default function BookMeeting() {
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
         >
           Let’s connect and talk about how I can help bring your ideas to life.
@@ -55,24 +55,20 @@ export default function BookMeeting() {
         </motion.p>
 
         {/* Benefits */}
-        <div className="mt-12 grid sm:grid-cols-3 gap-8 text-left">
+        <div className="mt-14 grid sm:grid-cols-3 gap-8 text-left">
           {benefits.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{
-                opacity: 0,
-                scale: 0.9,
-                x: idx === 0 ? -80 : idx === 2 ? 80 : 0,
-                y: idx === 1 ? 80 : 0,
-              }}
-              whileInView={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{
-                duration: 0.7,
-                delay: idx * 0.2,
-                ease: [0.25, 0.1, 0.25, 1],
+                duration: 0.6,
+                delay: idx * 0.15,
+                ease: "easeOut",
               }}
-              viewport={{ once: true }}
-              className="p-[2px] rounded-2xl bg-gradient-to-r from-purple-400 to-purple-700 shadow-lg hover:scale-[1.03] transition-transform"
+              className="p-[2px] rounded-2xl bg-gradient-to-r from-purple-400 to-purple-700 shadow-lg 
+              transform-gpu will-change-transform hover:scale-[1.03] transition-transform duration-300"
             >
               <div className="bg-white rounded-2xl p-6 h-full flex flex-col">
                 <div className="mb-4">{item.icon}</div>
@@ -89,17 +85,17 @@ export default function BookMeeting() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-12"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          className="mt-14"
         >
           <a
             href="https://calendly.com/malikhussainahmed90/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transform transition-all duration-300"
+            className="inline-block px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transform transition-all duration-300"
           >
             Schedule a Meeting →
           </a>
