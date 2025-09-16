@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const projects = [
@@ -6,7 +8,7 @@ export default function Projects() {
       title: "Complimate-AI",
       description:
         "Easily create, customize, and manage privacy and cookie policies that align with global regulations and adapt to your business.",
-      image: "/images/development.jpg",
+      image: "/images/WatchesWebsite.jpeg",
       link: "#",
     },
     {
@@ -47,46 +49,77 @@ export default function Projects() {
   ];
 
   return (
-    <section>
-      <div className="mx-auto max-w-6xl ">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            <span className="text-orange-500">Projects</span>
-          </h2>
-          <p className="mt-3 text-lg text-gray-600">
-            Some of the projects I’ve worked on, showcasing my expertise in web
-            and app development.
-          </p>
-        </div>
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-b from-white via-slate-50 to-white"
+    >
+      {/* Section Heading */}
+      <motion.div
+        initial={{ opacity: 0, letterSpacing: "0.2em" }}
+        whileInView={{ opacity: 1, letterSpacing: "0em" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-center max-w-3xl mx-auto mb-12"
+      >
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900">
+          Featured{" "}
+          <span className="bg-gradient-to-r from-purple-500 to-purple-700 text-transparent bg-clip-text">
+            Projects
+          </span>
+        </h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-4 text-gray-600"
+        >
+          A showcase of solutions I’ve built — blending creativity, technology,
+          and innovation.
+        </motion.p>
+      </motion.div>
 
-        <div className="projects mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6  p-16">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="min-h-100 bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-105 will-change-transform"
-            >
-              <img
+      {/* Projects Grid */}
+      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        {projects.map((project, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, rotateY: idx % 2 === 0 ? -15 : 15, scale: 0.9 }}
+            whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
+            transition={{
+              duration: 0.7,
+              delay: idx * 0.15,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="bg-gradient-to-r from-purple-400 to-purple-700 pt-[2px] pr-[2px] pl-[2px] pb-[15px] rounded-2xl shadow-xl hover:scale-[1.04] transition-transform duration-300"
+          >
+            <div className="bg-white rounded-2xl overflow-hidden flex flex-col h-full">
+              <motion.img
                 src={project.image}
                 alt={project.title}
-                className="max-h-60 w-full object-cover"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="h-48 w-full object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-900">
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-gray-900">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">
+                <p className="mt-2 text-gray-600 text-sm flex-grow">
                   {project.description}
                 </p>
                 <a
                   href={project.link}
-                  className="inline-block mt-3 text-orange-500 font-medium hover:underline"
+                  className="mt-4 inline-block text-purple-600 font-semibold hover:text-purple-800 transition-colors"
                 >
                   View Project →
                 </a>
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

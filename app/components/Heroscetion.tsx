@@ -58,12 +58,15 @@ export default function Herosection() {
         >
           {/* Book a Call */}
           <motion.button
+           
             onClick={scrollToContact}
             className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium px-6 py-3 rounded-md hover:shadow-lg hover:shadow-indigo-500/30 transition-all flex items-center group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
+            <a href="https://calendly.com/malikhussainahmed90/30min">
             Let’s Book A Call
+            </a>
             <motion.span
               className="ml-2"
               initial={{ x: 0 }}

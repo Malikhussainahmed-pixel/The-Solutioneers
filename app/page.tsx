@@ -4,7 +4,7 @@ import Services from "./components/Services";
 import InfiniteCarousel from "./components/Infinitecarousel";
 import Founders from "./components/Founders";
 import Benefits from "./components/Benefits";
-import Developmenthub from "./components/Developmenthub";
+import Aboutus from "./components/Aboutus";
 import Projects from "./components/Projects";
 import Bookmeeting from "./components/Bookmeeting";
 import Footer from "./components/Footer";
@@ -24,7 +24,7 @@ export default function Home() {
     <Services/>
     <InfiniteCarousel/>
      <Benefits/>
-     <Developmenthub/>
+     <Aboutus/>
     <Projects/>
     <Founders/>
    <Bookmeeting/>

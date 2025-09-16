@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
-import { Users, Layers, MessageSquare, Clock } from "lucide-react"; // example icons
+import { motion } from "framer-motion";
+import { Users, Layers, MessageSquare, Clock } from "lucide-react";
 
 export default function Benefits() {
   const items = [
@@ -26,32 +28,63 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="mt-0  bg-gradient-to-b from-slate-50 to-slate-100 py-30 ">
+    <section
+      id="benefits"
+      className="mt-0 bg-gradient-to-b from-slate-50 to-slate-100 py-30"
+    >
       {/* Title + Subtitle */}
       <div className="max-w-4xl mx-auto text-center mb-12 px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold">
-        Benefit's from Using{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">Our Services?</span>
-        </h2>
-        <p className="mt-4 text-gray-600">
-          We help startups, businesses, tech companies and agencies scale
-          teams, accelerate projects, and bring ideas to life—all without the
-          cost and complexity of permanent hiring.
-        </p>
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-3xl sm:text-4xl font-bold"
+        >
+          Benefit's from Using{" "}
+          <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+            Our Services?
+          </span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="mt-4 text-gray-600"
+        >
+          We help startups, businesses, tech companies and agencies scale teams,
+          accelerate projects, and bring ideas to life—all without the cost and
+          complexity of permanent hiring.
+        </motion.p>
       </div>
 
       {/* Grid */}
       <div className="max-w-6xl mx-auto grid sm:grid-cols-2 gap-12 px-6">
         {items.map((item, i) => (
-          <div key={i} className="flex gap-4 items-start">
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: i < 2 ? -120 : 120 }} // first 2 left, last 2 right
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.6,
+              delay: i * 0.15,
+              ease: [0.42, 0, 0.58, 1], // smooth cubic bezier
+            }}
+            className="flex gap-4 items-start"
+          >
             {/* Icon */}
-            <div className="text-white bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-xl">{item.icon}</div>
+            <div className="text-white bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-xl">
+              {item.icon}
+            </div>
             {/* Text */}
             <div>
               <h3 className="font-semibold text-lg">{item.title}</h3>
               <p className="text-gray-600 mt-1">{item.desc}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

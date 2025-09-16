@@ -6,6 +6,7 @@ body {
   padding: 0 !important;
    margin: 0 !important;
     padding: 0 !important;
+    overflow-x: hidden !important;
      /* background: linear-gradient(to right, #ffedd5 0%, #fff7ed 30%, #ffffff 100%); */
 }
 

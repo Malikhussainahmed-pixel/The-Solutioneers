@@ -51,7 +51,7 @@ export default function ServiceCards() {
     <section id="services" className="bg-gradient-to-b from-slate-50 to-slate-100 relative overflow-hidden">
       {/* Header */}
       <motion.div
-        className="text-center mb-2 sm:mb-10 mt-54 sm:mt-40"
+        className="text-center mb-2 sm:mb-10 mt-15 sm:mt-15"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
