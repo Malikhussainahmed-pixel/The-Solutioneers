@@ -92,30 +92,15 @@ export default function Projects() {
       {/* Projects Grid */}
       <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
         {projects.map((project, idx) => (
-          <motion.div
-            key={idx}
-            initial={{
-              opacity: 0,
-              rotateY: idx % 2 === 0 ? -15 : 15,
-              scale: 0.9,
-            }}
-            whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
-            transition={{
-              duration: 0.7,
-              delay: idx * 0.15,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true, amount: 0.2 }}
+          <div
+           
             className="border-b-6 border-r-1 border-l-1 border-[#B69F72]  rounded-2xl shadow-xl hover:scale-[1.04] transition-transform duration-300 bg-white" // ✅ added bg-white here
           >
             <div className="rounded-2xl overflow-hidden flex flex-col h-full">
-              <motion.img
+              <img
                 src={project.image}
                 alt={project.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true }}
+                
                 className="h-48 w-full object-cover"
               />
               <div className="p-6 flex flex-col flex-grow">
@@ -133,7 +118,7 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

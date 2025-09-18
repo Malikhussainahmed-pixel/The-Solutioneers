@@ -76,7 +76,7 @@ export default function Benefits() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{
               duration: 0.6,
-              delay: i * 0.15,
+             
               ease: "easeOut",
             }}
             className="p-8 min-h-60 overflow-hidden bg-white/100 backdrop-blur-xl border border-white/30 
