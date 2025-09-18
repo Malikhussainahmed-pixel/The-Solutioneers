@@ -7,11 +7,40 @@ body {
    margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden !important;
+   background-color: #fafafa;
+    
      /* background: linear-gradient(to right, #ffedd5 0%, #fff7ed 30%, #ffffff 100%); */
 }
 
 
 
+/* .hero-section{
+ background-image: url('/wave-haikei.svg');
+ background-size: cover;
+
+}
+.services-section{
+  background-image: url('/wave-haikei-top.svg'),url('/long-layers.svg');
+  
+   
+    
+ background-size: cover;
+} */
+.benefits-section{
+    background-image: url('/wave-bottom.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.about-section{
+   background-image: url('/wave-top.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* .infinit-caraousel{
+  
+} */
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

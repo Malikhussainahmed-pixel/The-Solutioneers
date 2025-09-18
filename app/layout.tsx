@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-import { Lato } from "next/font/google";
-const lato = Lato({ 
-  subsets: ["latin"],
-  weight: ["400", "700","900"],
+// import { Koh_Santepheap } from "next/font/google";
+// const koh_Santepheap = Koh_Santepheap({ 
+//   subsets: ["latin"],
+//   weight: ["400", "700","900"],
 
-});
+// });
 
 
 
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body  className={`${lato.className} `}
+      <body 
       >
         <Navbar />
         {children}

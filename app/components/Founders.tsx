@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 export default function Founders() {
   const founders = [
     {
@@ -18,18 +19,34 @@ export default function Founders() {
 
   return (
     <section
-      className="py-20 bg-gradient-to-b from-slate-50 to-white"
+      className="relative py-10 lg:py-32 md:py-24 "
       id="founders"
     >
+      {/* Background Waves */}
+      <motion.img
+        src="/thin-lin-wave-2.svg"
+        alt="wave"
+        className="absolute  bottom-0 left-1/2 -translate-x-1/2 w-full opacity-20 hidden sm:block"
+        animate={{ y: [0, 80, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.img
+        src="/thin-lin-wave.svg"
+        alt="wave"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full opacity-30 hidden sm:block"
+        animate={{ y: [80, 0, 80] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      
       {/* Section Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-[#39364A]">
           Meet the{" "}
-          <span className="bg-gradient-to-r from-purple-500 to-purple-700 text-transparent bg-clip-text">
+          <span className="text-[#B69F72]">
             Founders
           </span>
         </h2>
-        <p className="mt-4 text-gray-600">
+        <p className="mt-4 text-[#39364A] font-semibold">
           The minds behind Solutioneers — combining innovation, experience, and
           a passion for building transformative technology.
         </p>
@@ -40,19 +57,19 @@ export default function Founders() {
         {founders.map((founder, i) => (
           <div
             key={i}
-            className="relative bg-gradient-to-r from-purple-400 to-purple-700 pt-[2px] pr-[2px] pl-[2px] pb-[15px] rounded-2xl shadow-xl hover:scale-[1.02] transition-transform"
+            className="relative bg-gradient-to-r from-[#B69F72] to-black  pt-[2px] pr-[2px] pl-[2px] pb-[15px] rounded-2xl shadow-xl hover:scale-[1.02] transition-transform"
           >
             <div className="bg-white rounded-2xl p-6 flex flex-col items-center text-center h-full">
               <img
                 src={founder.image}
                 alt={founder.name}
-                className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover shadow-md border-4 border-white"
+                className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover shadow-md border-4 border-[#B69F72]"
               />
               <h3 className="mt-6 font-bold text-2xl text-gray-900">
                 {founder.name}
               </h3>
-              <p className="text-purple-600 font-semibold">{founder.role}</p>
-              <p className="mt-4 text-gray-600 leading-relaxed">
+              <p className="text-[#39364A] font-semibold">{founder.role}</p>
+              <p className="mt-4 text-[#39364A] leading-relaxed">
                 {founder.desc}
               </p>
             </div>

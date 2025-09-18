@@ -49,10 +49,21 @@ export default function Projects() {
   ];
 
   return (
-    <section
-      id="projects"
-      className="py-20 bg-gradient-to-b from-white via-slate-50 to-white"
-    >
+    <section id="projects" className="py-10 lg:py-32 md:py-24 relative">
+      <motion.img
+        src="/thin-lin-wave-2.svg"
+        alt="wave"
+        className="absolute  bottom-0 left-1/2 -translate-x-1/2 w-full opacity-20 -z-10 hidden sm:block"
+        animate={{ y: [0, 80, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.img
+        src="/thin-lin-wave.svg"
+        alt="wave"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full opacity-30 -z-10 hidden sm:block"
+        animate={{ y: [80, 0, 80] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
       {/* Section Heading */}
       <motion.div
         initial={{ opacity: 0, letterSpacing: "0.2em" }}
@@ -61,9 +72,9 @@ export default function Projects() {
         viewport={{ once: true }}
         className="text-center max-w-3xl mx-auto mb-12"
       >
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-[#39364A]">
           Featured{" "}
-          <span className="bg-gradient-to-r from-purple-500 to-purple-700 text-transparent bg-clip-text">
+          <span className="text-[#B69F72]">
             Projects
           </span>
         </h2>
@@ -71,7 +82,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-4 text-gray-600"
+          className="mt-4 text-[#39364A] font-semibold"
         >
           A showcase of solutions I’ve built — blending creativity, technology,
           and innovation.
@@ -83,7 +94,11 @@ export default function Projects() {
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, rotateY: idx % 2 === 0 ? -15 : 15, scale: 0.9 }}
+            initial={{
+              opacity: 0,
+              rotateY: idx % 2 === 0 ? -15 : 15,
+              scale: 0.9,
+            }}
             whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
             transition={{
               duration: 0.7,
@@ -91,9 +106,9 @@ export default function Projects() {
               ease: "easeOut",
             }}
             viewport={{ once: true, amount: 0.2 }}
-            className="bg-gradient-to-r from-purple-400 to-purple-700 pt-[2px] pr-[2px] pl-[2px] pb-[15px] rounded-2xl shadow-xl hover:scale-[1.04] transition-transform duration-300"
+            className="border-b-6 border-r-1 border-l-1 border-[#B69F72]  rounded-2xl shadow-xl hover:scale-[1.04] transition-transform duration-300 bg-white" // ✅ added bg-white here
           >
-            <div className="bg-white rounded-2xl overflow-hidden flex flex-col h-full">
+            <div className="rounded-2xl overflow-hidden flex flex-col h-full">
               <motion.img
                 src={project.image}
                 alt={project.title}
@@ -104,15 +119,15 @@ export default function Projects() {
                 className="h-48 w-full object-cover"
               />
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-[#39364A]">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-gray-600 text-sm flex-grow">
+                <p className="mt-2 text-gray-600 text-sm font-semibold flex-grow">
                   {project.description}
                 </p>
                 <a
                   href={project.link}
-                  className="mt-4 inline-block text-purple-600 font-semibold hover:text-purple-800 transition-colors"
+                  className="mt-4 inline-block text-[#B69F72] font-semibold hover:text-[#39364A] transition-colors"
                 >
                   View Project →
                 </a>

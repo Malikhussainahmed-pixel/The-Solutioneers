@@ -7,6 +7,8 @@ import Benefits from "./components/Benefits";
 import Aboutus from "./components/Aboutus";
 import Projects from "./components/Projects";
 import Bookmeeting from "./components/Bookmeeting";
+import Frequentquestion from "./components/Frequentquestion";
+import Analyticsdashboard from "./components/Analyticsdashboard";
 import Footer from "./components/Footer";
 import { Lato } from "next/font/google";
 const lato = Lato({ 
@@ -22,11 +24,15 @@ export default function Home() {
     
     <Heroscetion/>
     <Services/>
-    <InfiniteCarousel/>
+   
      <Benefits/>
      <Aboutus/>
     <Projects/>
+     <InfiniteCarousel/>
+    <Analyticsdashboard/>
     <Founders/>
+   
+   <Frequentquestion/>
    <Bookmeeting/>
    <Footer/>
     </>

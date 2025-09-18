@@ -27,7 +27,7 @@ export default function InfiniteCarousel() {
   return (
     <>
     
-    <div className="w-full  overflow-hidden bg-transparent py-2">
+    <div className=" infinit-caraousel w-full  overflow-hidden bg-transparent py-2">
       <motion.div
         className="flex w-max"
         animate={{ x: ["0%", "-50%"] }}

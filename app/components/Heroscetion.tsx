@@ -6,32 +6,49 @@ import { ArrowRight } from "lucide-react";
 export default function Herosection() {
   const scrollToServices = () => {
     const element = document.getElementById("services");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 min-h-screen flex items-center justify-center px-6">
-      <div className="text-center grid gap-6 sm:gap-7 sm:p-4">
+    <section className="hero-section relative  min-h-screen flex items-center justify-center px-6 overflow-hidden ">
+               
+      {/* Wave SVG Background */}
+      {/* Left Circle */}
+      <motion.div
+        className="absolute left-[-50px] top-1/2 md:w-90 md:h-90 w-85 h-85 rounded-full bg-[#39364a1c]"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      />
+
+      {/* Right Circle */}
+      <motion.div
+        className="absolute right-[-100px] top-1/6 w-96 h-96 rounded-full bg-[#b69f721c]"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+      />
+      
+      
+
+      {/* Content */}
+      <div className="relative text-center grid gap-6 sm:gap-7 sm:p-4 z-10">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-black text-6xl sm:text-8xl lg:text-8xl text-white"
+          className="font-black text-6xl sm:text-8xl lg:text-8xl text-[#39364A]"
         >
-          The{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-            Solutioneers
+         Solutions{" "}
+          <span className="bg-gradient-to-r from-[#B69F72] to-black  bg-clip-text text-transparent">
+         That Work
           </span>
         </motion.div>
 
@@ -41,11 +58,9 @@ export default function Herosection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-black md:text-lg lg:text-xl max-w-4xl mx-auto text-white"
+          className="font-black md:text-lg lg:text-xl max-w-4xl mx-auto text-[#39364A]"
         >
-          We automate business processes that won’t require you handing off
-          paychecks and benefits on a monthly basis, an AI Agent will do that
-          for you.
+          We bring creativity, technology, and expertise together to build solutions that solve real challenges and drive your success.
         </motion.div>
 
         {/* Buttons */}
@@ -56,36 +71,29 @@ export default function Herosection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          {/* Book a Call */}
           <motion.button
-           
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium px-6 py-3 rounded-md hover:shadow-lg hover:shadow-indigo-500/30 transition-all flex items-center group"
-            whileHover={{ scale: 1.05 }}
+            className="bg-gradient-to-r from-[#B69F72] to-black text-white font-medium px-6 py-3 rounded-md shadow-xl/30 transition-all flex items-center group"
+            whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.95 }}
           >
             <a href="https://calendly.com/malikhussainahmed90/30min">
-            Let’s Book A Call
+              Let’s Book A Call
             </a>
             <motion.span
               className="ml-2"
               initial={{ x: 0 }}
-              animate={{ x: 5 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "reverse",
-                duration: 0.6,
-              }}
+              animate={{ x: 6 }}
+              transition={{ repeat: Infinity, repeatType: "reverse", duration: 0.6 }}
             >
               <ArrowRight size={18} />
             </motion.span>
           </motion.button>
 
-          {/* Services */}
           <motion.button
             onClick={scrollToServices}
-            className="border border-indigo-300 text-white font-medium px-6 py-3 rounded-md hover:bg-white/10 transition-all"
-            whileHover={{ scale: 1.05 }}
+            className="border-2 border-[#B69F72] text-[#39364A] font-bold px-6 py-3 rounded-md hover:bg-white/10 transition-all"
+            whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.95 }}
           >
             Our Services
